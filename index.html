@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrinterFarm</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="script.js"></script>
+    <script src="overlayOpener.js"></script>
+    <script src="reloadPrinter.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+
+    <div id="background">
+        <div> <!-- empty --> </div>
+        <button onclick="printer0()" > <img alt="printer" src="plus.jpg" id="printer0"> </button>
+        <button onclick="printer1()" > <img alt="printer" src="plus.jpg" id="printer1"> </button>
+        <button onclick="printer2()" > <img alt="printer" src="plus.jpg" id="printer2"> </button>
+        <div> <!-- empty --> </div>
+        <button onclick="printer3()" > <img alt="printer" src="plus.jpg" id="printer3"> </button>
+        <button onclick="printer4()" > <img alt="printer" src="plus.jpg" id="printer4"> </button>
+        <button onclick="printer5()" > <img alt="printer" src="plus.jpg" id="printer5"> </button>
+        <div> <!-- empty --> </div>
+        <button onclick="printer6()" > <img alt="printer" src="plus.jpg" id="printer6"> </button>
+        <button onclick="printer7()" > <img alt="printer" src="plus.jpg" id="printer7"> </button>
+        <button onclick="printer8()" > <img alt="printer" src="plus.jpg" id="printer8"> </button>
+        <div> <!-- empty --> </div>
+        <button onclick="printer9()" > <img alt="printer" src="plus.jpg" id="printer9"> </button>
+        <button onclick="printer10()" > <img alt="printer" src="plus.jpg" id="printer10"> </button>
+        <button onclick="printer11()" > <img alt="printer" src="plus.jpg" id="printer11"> </button>
+        <div> <!-- empty --> </div>
+        <button onclick="printer12()" > <img alt="printer" src="plus.jpg" id="printer12"> </button>
+        <button onclick="printer13()" > <img alt="printer" src="plus.jpg" id="printer13"> </button>
+        <button onclick="printer14()" > <img alt="printer" src="plus.jpg" id="printer14"> </button> 
+        
+        <div> <!-- empty --> </div>
+        <div> <!-- empty --> </div>
+        <div> <!-- empty --> </div>
+        <div> <!-- empty --> </div>
+
+    </div>
+    <div id="upgrades">
+        <div id="money">
+            <img alt="cash" id="cash" src="plus.jpg">
+            <p id="balance"></p>
+            <img alt="cash" id="perSec" src="plus.jpg">
+            <p></p>
+        </div>
+        <div id="header">
+            <h1 class="header"> Upgrades </h1>
+        </div>
+        <div id="speed">
+
+        </div>
+        <div id="price">
+
+        </div>
+        <div id="cheaperPrinters">
+
+        </div>
+        <div id="cheaperFilament">
+            
+        </div>
+        <div id="fasterInitializingTime">
+            
+        </div>
+    </div>
+    
+    <div id="overlay">
+        <div id="overlay-content">
+            <h2 id="overlayHeader">Buy a Printer:</h2>
+            <button class="buyPrinter" onclick="A1mini()">
+                <p class="printerName">Bambulab A1 mini</p>
+                <div class="priceContainer">
+                    <p class="price" >150</p> <img class="coin" alt="coin" src="plus.jpg"> 
+                </div>
+                <img class="preview" alt="printer" src="A1mini.png">
+            </button>
+            <button class="buyPrinter" onclick="prusaMini()">
+                <p class="printerName">Prusa mini</p> 
+                <div class="priceContainer">
+                    <p class="price" >150</p> <img class="coin" alt="coin" src="plus.jpg">  
+                </div>
+                <img class="preview" alt="printer" src="prusaMini.png">
+            </button>
+            <button id="overlayClose" onclick="closeOverlay()">Close</button>
+        </div>
+    </div>
+</body>
+</html>
+

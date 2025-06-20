@@ -1,0 +1,155 @@
+body {
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+#background {
+    flex: 1.325;
+    display: grid;
+    grid-template-columns: 45px repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr) 1.2fr 17px;
+    background-image: url("background.jpg");
+    background-size: 875px, 875px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#background button {
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#background img {
+    width: 50px;
+    height: 50px;
+    background: none;
+}
+
+
+#upgrades {
+    flex: 1;
+    background-color: beige;
+    display: grid;
+    grid-template-rows: repeat(8, 1fr);
+    
+}
+
+#header, #speed, #price, #cheaperPrinters, #cheaperFilament, #fasterInitializingTime {
+    margin: 15px;
+}
+
+.header {
+    text-align: center;
+    margin: auto;
+    font-size: 70px;
+    font-family: 'Oswald';
+}
+
+#money {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+}
+
+#cash, #perSec {
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    margin: auto;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#overlay-content {
+    background: beige;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 300px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.preview {
+    width: 150px;
+    height: 150/16*9px;
+    justify-content: center;
+    margin: auto;
+}
+
+body {
+    font-family: 'Oswald';
+}
+
+#overlayHeader {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    font-size: 40px;
+}
+
+#overlayClose {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    font-weight: bold;
+}
+
+p {
+    font-weight: bold;
+}
+
+.buyPrinter, #overlayClose {
+    margin: 15px;
+    border-radius: 10px;
+    background-color: rgb(232, 186, 88);
+}
+
+.buyPrinter {
+    display: grid;
+    grid-template-rows: auto auto auto 10px;
+}
+
+.printerName {
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.price {
+    text-align: right;
+}
+
+.coin {
+    
+    width: 10px;
+    height: 10px;
+    margin: auto;
+}
+
+.preview {
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.priceContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
