@@ -45,49 +45,118 @@
     </div>
     <div id="upgrades">
         <div id="money">
-            <img alt="cash" id="cash" src="plus.jpg">
-            <p id="balance"></p>
-            <img alt="cash" id="perSec" src="plus.jpg">
-            <p></p>
+            <p id="balance"> 150 </p>
+            <img alt="cash" id="cash" src="cash.png">
+            <p id="cashPerSec"> 0 </p>
+            <p id="cashPerSecSymbol"> $ / second </p>
         </div>
         <div id="header">
-            <h1 class="header"> Upgrades </h1>
+            <h1 class="header1"> Upgrades </h1>
         </div>
-        <div id="speed">
-
-        </div>
-        <div id="price">
-
-        </div>
-        <div id="cheaperPrinters">
-
-        </div>
-        <div id="cheaperFilament">
-            
-        </div>
-        <div id="fasterInitializingTime">
-            
-        </div>
+        <button id="speed" type="button">
+            <p class="upgradeHeader">Speed</p>
+            <p id="upgradeCounter1"> x0 </p>
+            <p class="upgradeInformation">Increases Income by 5%</p>
+            <p>50$</p>
+        </button>
+        <button id="income" type="button">
+            <p class="upgradeHeader">Income</p>
+            <p id="upgradeCounter2"> x0 </p>
+            <p class="upgradeInformation">Increases Income by 10%</p>
+            <p>500$</p>
+        </button>
+        <button id="cheaperPrinters" type="button">
+            <p class="upgradeHeader">Cheaper Printers</p>
+            <p id="upgradeCounter3"> x0 </p>
+            <p class="upgradeInformation">Decreases Printercosts by 10%</p>
+            <p>250$</p>
+        </button>
+        <button id="cheaperFilament" type="button">
+            <p class="upgradeHeader">Cheaper Filament</p>
+            <p id="upgradeCounter4"> x0 </p>
+            <p class="upgradeInformation">Increases Income by 20%</p>
+            <p>1000$</p>
+        </button>
     </div>
     
     <div id="overlay">
         <div id="overlay-content">
             <h2 id="overlayHeader">Buy a Printer:</h2>
-            <button class="buyPrinter" onclick="A1mini()">
-                <p class="printerName">Bambulab A1 mini</p>
-                <div class="priceContainer">
-                    <p class="price" >150</p> <img class="coin" alt="coin" src="plus.jpg"> 
-                </div>
-                <img class="preview" alt="printer" src="A1mini.png">
-            </button>
-            <button class="buyPrinter" onclick="prusaMini()">
+            <button class="buyPrinter" data-printer="prusaMini" onclick="prusaMini()">
+                <p class="current-label" style="display:none;">Current Printer</p>
                 <p class="printerName">Prusa mini</p> 
                 <div class="priceContainer">
-                    <p class="price" >150</p> <img class="coin" alt="coin" src="plus.jpg">  
+                    <p class="price" >100</p> <img class="coin" alt="coin" src="cash.png">  
                 </div>
                 <img class="preview" alt="printer" src="prusaMini.png">
             </button>
+            <button class="buyPrinter" data-printer="A1mini" onclick="A1mini()">
+                <p class="current-label" style="display:none;">Current Printer</p>
+                <p class="printerName">Bambulab A1 mini</p>
+                <div class="priceContainer">
+                    <p class="price" >150</p> <img class="coin" alt="coin" src="cash.png"> 
+                </div>
+                <img class="preview" alt="printer" src="A1mini.png">
+            </button>
+            
+            <button class="buyPrinter" data-printer="printer200" onclick="printer200()">
+                <p class="current-label" style="display:none;">Current Printer</p>
+                <p class="printerName">Printer 200</p>
+                <div class="priceContainer">
+                    <p class="price">200</p> <img class="coin" alt="coin" src="cash.png">
+                </div>
+                <img class="preview" alt="printer" src="printer1.png">
+            </button>
+            <button class="buyPrinter" data-printer="printer400" onclick="printer400()">
+                <p class="current-label" style="display:none;">Current Printer</p>
+                <p class="printerName">Printer 400</p>
+                <div class="priceContainer">
+                    <p class="price">400</p> <img class="coin" alt="coin" src="cash.png">
+                </div>
+                <img class="preview" alt="printer" src="printer2.png">
+            </button>
+            <button class="buyPrinter" data-printer="printer750" onclick="printer750()">
+                <p class="current-label" style="display:none;">Current Printer</p>
+                <p class="printerName">Printer 750</p>
+                <div class="priceContainer">
+                    <p class="price">750</p> <img class="coin" alt="coin" src="cash.png">
+                </div>
+                <img class="preview" alt="printer" src="printer3.png">
+            </button>
+            <button class="buyPrinter" data-printer="printer1500" onclick="printer1500()">
+                <p class="current-label" style="display:none;">Current Printer</p>
+                <p class="printerName">Printer 1500</p>
+                <div class="priceContainer">
+                    <p class="price">1500</p> <img class="coin" alt="coin" src="cash.png">
+                </div>
+                <img class="preview" alt="printer" src="printer4.png">
+            </button>
+            <button class="buyPrinter" data-printer="printer2800" onclick="printer2800()">
+                <p class="current-label" style="display:none;">Current Printer</p>
+                <p class="printerName">Printer 2800</p>
+                <div class="priceContainer">
+                    <p class="price">2800</p> <img class="coin" alt="coin" src="cash.png">
+                </div>
+                <img class="preview" alt="printer" src="printer5.png">
+            </button>
+            <button class="buyPrinter" data-printer="printer6000" onclick="printer6000()">
+                <p class="current-label" style="display:none;">Current Printer</p>
+                <p class="printerName">Printer 6000</p>
+                <div class="priceContainer">
+                    <p class="price">6000</p> <img class="coin" alt="coin" src="cash.png">
+                </div>
+                <img class="preview" alt="printer" src="printer6.png">
+            </button>
+            <!-- Ende neue Drucker-Buttons -->
             <button id="overlayClose" onclick="closeOverlay()">Close</button>
+        </div>
+    </div>
+    <div id="warningOverlay">
+        <div style="display: grid; grid-template-rows: auto auto auto;"> 
+           <div id="moneyWarningBox">
+                <h1 id="notEnoughMoney"> You don't have enough Money! </h1>
+                <button id="okButton" onclick="closeSecondOverlay()"> Okay </button>
+            </div> 
         </div>
     </div>
 </body>

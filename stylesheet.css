@@ -11,9 +11,12 @@ body {
     grid-template-columns: 45px repeat(3, 1fr);
     grid-template-rows: repeat(4, 1fr) 1.2fr 17px;
     background-image: url("background.jpg");
-    background-size: 875px, 875px;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    background-clip: padding-box;
+    height: 100vh;
+    width: 100%;
 }
 
 #background button {
@@ -25,9 +28,19 @@ body {
 }
 
 #background img {
+    width: 220px;
+    height: 100px;
+    background: none;
+}
+
+#background img[src$="plus.jpg"] {
     width: 50px;
     height: 50px;
-    background: none;
+}
+
+#background img:not([src$="plus.jpg"]) {
+    width: 220px;
+    height: 100px;
 }
 
 
@@ -39,14 +52,28 @@ body {
     
 }
 
-#header, #speed, #price, #cheaperPrinters, #cheaperFilament, #fasterInitializingTime {
+#speed, #income, #cheaperPrinters, #cheaperFilament {
     margin: 15px;
+    display: grid;
+    grid-template-rows: 60px 40px;
+    grid-template-columns: auto 30px;
+    border-radius: 15px;
+    background-color: rgb(232, 186, 88);
+
 }
 
 .header {
     text-align: center;
     margin: auto;
     font-size: 70px;
+    font-family: 'Oswald';
+}
+
+
+.header1 {
+    text-align: center;
+    margin: auto;
+    font-size: 40px;
     font-family: 'Oswald';
 }
 
@@ -81,11 +108,62 @@ body {
     padding: 30px;
     border-radius: 10px;
     text-align: center;
-    min-width: 300px;
+    min-width: 700px;
+    max-width: 1100px;
+    max-height: 80vh;
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
     display: grid;
-    grid-template-rows: auto auto auto;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(0, auto);
+    gap: 32px 24px;
+    overflow-y: auto;
+}
+
+#warningOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    display: none;
+}
+
+#moneyWarningBox {
+    display: grid;
+    grid-template-rows: auto auto;
+    height: 300px;
+    width: 600px;
+    background-color: beige;
+    border-radius: 15px;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+#notEnoughMoney {
+    background: rgb(255, 255, 255);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 300px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    width: 400px;
+    margin: auto;
+
+}
+
+#okButton {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 30px;
+    font-family: 'Oswald';
 }
 
 .preview {
@@ -100,17 +178,25 @@ body {
 }
 
 #overlayHeader {
-    grid-column-start: 1;
-    grid-column-end: 4;
+    grid-column: 1 / -1;
     font-size: 40px;
+    margin-bottom: 0;
 }
 
 #overlayClose {
     grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 3;
-    grid-row-end: 4;
+    grid-column-end: 4;
+    grid-row-start: 4;
+    grid-row-end: 5;
     font-weight: bold;
+    min-width: 120px;
+    max-width: 200px;
+    justify-self: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 38px;
+    padding: 0 16px;
+    font-size: 18px;
 }
 
 p {
@@ -125,7 +211,15 @@ p {
 
 .buyPrinter {
     display: grid;
-    grid-template-rows: auto auto auto 10px;
+    grid-template-rows: 40px auto auto 10px;
+    min-height: 240px;
+    max-height: 240px;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    position: relative;
 }
 
 .printerName {
@@ -139,8 +233,8 @@ p {
 
 .coin {
     
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
     margin: auto;
 }
 
@@ -152,4 +246,67 @@ p {
 .priceContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
+}
+
+#balance, #cashPerSec {
+    margin: auto;
+    display: inline;
+    font-size: 40px;
+}
+
+.currentPrinter {
+    background-color: #4CAF50 !important;
+    color: white;
+    border: 2px solid #388e3c;
+}
+.current-label {
+    background: transparent;
+    color: #fff;
+    border-radius: 8px;
+    padding: 6px 16px;
+    margin: 0 0 4px 0;
+    width: fit-content;
+    font-size: 18px;
+    font-weight: bold;
+    grid-row: 1;
+    grid-column: 1 / -1;
+    justify-self: center;
+    min-height: 28px;
+    transition: background 0.2s, color 0.2s;
+    opacity: 1;
+    z-index: 2;
+    box-shadow: none;
+}
+.currentPrinter, .current-label {
+    background: #4CAF50;
+    color: #fff !important;
+    opacity: 1;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+#cashPerSecSymbol {
+    font-size: 30px;
+}
+
+.upgradeHeader, .upgradeInformation {
+    text-align: left;
+}
+
+.upgradeHeader {
+    margin-bottom: 3px;
+    font-size: 25px;
+}
+
+.upgradeInformation {
+    margin: 0px;
+    padding: 0px;
+    height: 8px;
+}
+
+#header {
+    height: 50px;
+}
+
+#upgradeCounter1, #upgradeCounter2, #upgradeCounter3, #upgradeCounter4 {
+    font-size: 25px;
 }
