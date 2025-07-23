@@ -1,4 +1,4 @@
-// Mapping von Druckername zu Bilddatei wie im Overlay
+
 const printerImageMap = {
     A1mini: "A1mini.png",
     prusaMini: "prusaMini.png",
